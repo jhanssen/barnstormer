@@ -20,6 +20,10 @@ eagle.request({ Name: "list_devices" }).then((data) => {
     return eagle.request({ Name: "get_instantaneous_demand", MacId: mac });
 }).then((data) => {
     console.log("inst:", data);
+    let demand = parseInt(data.InstantaneousDemand.Demand);
+    let mul = parseInt(data.InstantaneousDemand.Multiplier);
+    let div = parseInt(data.InstantaneousDemand.Divisor);
+    console.log("demand:", demand * mul / div);
 }).catch((err) => {
     console.error("error:", err);
 });
