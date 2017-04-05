@@ -46,20 +46,13 @@ class Eagle
                     reject();
                 });
                 socket.on("data", (data) => {
-                    //this.emit("data", data.toString("utf8"));
                     buffer += data.toString("utf8");
-                    try {
-                        this._parser.parseString(buffer, (err, data) => {
-                            if (err) {
-                                reject(err);
-                                return;
-                            }
-                            resolve(data);
-                        });
-                    } catch (e) {
-                        // maybe we don't have enough data yet.
-                        // we'll resolve the error if the connection closes
-                    }
+                    this._parser.parseString(buffer, (err, data) => {
+                        if (err) {
+                            return;
+                        }
+                        resolve(data);
+                    });
                 });
             }).catch((err) => {
                 reject(err);
