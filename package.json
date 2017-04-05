@@ -1,0 +1,18 @@
+{
+  "name": "barnstormer",
+  "version": "0.0.1",
+  "description": "Local socket API for Rainforest Eagle",
+  "main": "index.js",
+  "author": "Jan Erik Hanssen",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jhanssen/barnstormer.git"
+  },
+  "dependencies": {
+    "xml2js": "^0.4.17"
+  },
+  "devDependencies": {
+    "minimist": "^1.2.0"
+  }
+}
